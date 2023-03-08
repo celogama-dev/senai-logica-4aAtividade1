@@ -1,0 +1,33 @@
+Subprograma Principal
+    Declarar Inteiro saldo, quantidade, saldoInicial, tipoDeEntrada
+    Declarar Texto encerrar
+    
+    Escrever "Informe o saldo inicial:"
+    Ler saldoInicial
+    Atribuir encerrar <- "n"
+    Enquanto encerrar == "n"
+        Escrever "Informar o tipo de movimentação (1-Entrada / 2-Saída):"
+        Ler tipoDeEntrada
+        Escrever "Informe a quantidade:"
+        Ler quantidade
+        Se tipoDeEntrada == 1
+            Atribuir saldo <- saldoInicial + quantidade
+        Senão
+            Se tipoDeEntrada == 2
+                Se saldoInicial >= quantidade
+                    Atribuir saldo <- saldoInicial - quantidade
+                    Escrever "Saída:" &  saldo
+                Senão
+                    Escrever "Saldo insuficiente!"
+                Fim
+            Fim
+        Fim
+        Escrever "Deseja encerrar? ( s / n )"
+        Ler encerrar
+    Fim
+    Escrever "Saldo Inicial:" & saldoInicial
+    Escrever "Entrada:" & quantidade
+    Escrever "Saída: " & saldo
+    Escrever "Sistema encerrado!"
+Fim
+

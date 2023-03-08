@@ -1,0 +1,32 @@
+function main() {
+    var saldo, quantidade, saldoInicial, tipoDeEntrada;
+    var encerrar;
+    
+    window.alert("Informe o saldo inicial:");
+    saldoInicial = Number(window.prompt('Enter a value for saldoInicial'));
+    encerrar = "n";
+    while (encerrar == "n") {
+        window.alert("Informar o tipo de movimentação (1-Entrada / 2-Saída):");
+        tipoDeEntrada = Number(window.prompt('Enter a value for tipoDeEntrada'));
+        window.alert("Informe a quantidade:");
+        quantidade = Number(window.prompt('Enter a value for quantidade'));
+        if (tipoDeEntrada == 1) {
+            saldo = saldoInicial + quantidade;
+        } else {
+            if (tipoDeEntrada == 2) {
+                if (saldoInicial >= quantidade) {
+                    saldo = saldoInicial - quantidade;
+                    window.alert("Saída:" + saldo);
+                } else {
+                    window.alert("Saldo insuficiente!");
+                }
+            }
+        }
+        window.alert("Deseja encerrar? ( s / n )");
+        encerrar = window.prompt('Enter a value for encerrar');
+    }
+    window.alert("Saldo Inicial:" + saldoInicial);
+    window.alert("Entrada:" + quantidade);
+    window.alert("Saída: " + saldo);
+    window.alert("Sistema encerrado!");
+}
